@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Remind</string>
+    <string name="activity">Activity</string>
+    <string name="title_activity_gps">Map</string>
+</resources>
