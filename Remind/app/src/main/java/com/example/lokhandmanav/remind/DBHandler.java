@@ -29,7 +29,7 @@ public class DBHandler extends SQLiteOpenHelper
         //public static final String COLUMN_Activity_FreqFK = "FreFK";
     public static final String TABLE_Trig = "trig";
         public static final String COLUMN_trigger_ID = "triggerNo";
-        public static final String COLUMN_trig = "Trig";
+        public static final String COLUMN_trig = "Trig"; // resource,gps or time
         public static final String COLUMN_trigger_Value = "triggerValue";
     public static final String TABLE_Frequency = "frequency";
         public static final String COLUMN_Freq_ID = "freqNo";
@@ -127,16 +127,24 @@ public class DBHandler extends SQLiteOpenHelper
         return in;
     }
 */
-
+    //Gps trig = 1 resource trig = 2, time = 3
     public String[][] databaseToString(int trig,int trigValue)
     {
         String dbString[][];
         String nullString[][] = new String[1][1];
         nullString[0][0] = "0";
         SQLiteDatabase db = getWritableDatabase();
+        String query;
+        switch(trigValue)
+        {
+            case 999: query = "SELECT " + COLUMN_Activity +","+COLUMN_Activity_ID+ " FROM " + TABLE_Trig + "," + TABLE_Activity + " WHERE " +
+                    COLUMN_trig + " = " + trig + " and "+ COLUMN_trigger_ID +" = "+COLUMN_Activity_ID;
+                        break;
 
-        String query = "SELECT " + COLUMN_Activity +","+COLUMN_Activity_ID+ " FROM " + TABLE_Trig + "," + TABLE_Activity + " WHERE " +
-                COLUMN_trig + " = " + trig + " and " + COLUMN_trigger_Value + " = " + trigValue +" and "+ COLUMN_trigger_ID +" = "+COLUMN_Activity_ID;
+            default: query = "SELECT " + COLUMN_Activity +","+COLUMN_Activity_ID+ " FROM " + TABLE_Trig + "," + TABLE_Activity + " WHERE " +
+                    COLUMN_trig + " = " + trig + " and " + COLUMN_trigger_Value + " = " + trigValue +" and "+ COLUMN_trigger_ID +" = "+COLUMN_Activity_ID;
+        }
+
 
         Cursor recordSet = db.rawQuery(query, null);
 

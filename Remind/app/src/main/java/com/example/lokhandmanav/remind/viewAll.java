@@ -18,8 +18,6 @@ String result[][];
         setContentView(R.layout.activity_view_all2);
         dbHandler = new DBHandler(START.appContext,null,null,1);
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-
         LinearLayout parent = (LinearLayout) inflater.inflate(R.layout.activity_view_all2,null);
         LinearLayout scrL =findViewById(R.id.scrL);
         //ScrollView scr = findViewById(R.id.scr);

@@ -71,7 +71,23 @@
         </receiver>
 
         <activity android:name=".TestActivity" />
-        <activity android:name=".viewAll"></activity>
+        <activity android:name=".viewAll" />
+
+        <receiver android:name=".View">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="ACTION_GET_RESOURCE" />
+                <action android:name="ACTION_GET_TIME" />
+                <action android:name="ACTION_GET_GPS" />
+                <action android:name="ACTION_GET_NEXT" />
+                <action android:name="ACTION_GET_PREVIOUS" />
+
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/view_info" />
+        </receiver>
     </application>
 
 </manifest>

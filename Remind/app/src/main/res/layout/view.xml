@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetRelative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/widget_margin">
+
+    <Button
+        android:id="@+id/GPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="25dp"
+        android:text="GPS" />
+
+    <Button
+        android:id="@+id/Resources"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/GPS"
+        android:layout_alignBottom="@+id/GPS"
+        android:layout_centerHorizontal="true"
+        android:text="Resource" />
+
+    <Button
+        android:id="@+id/Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="25dp"
+        android:text="Time" />
+
+    <TextView
+        android:id="@+id/act"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/GPS"
+        android:layout_alignRight="@+id/Time"
+        android:layout_below="@+id/GPS"
+        android:layout_marginTop="18dp"
+        android:background="@color/colorPrimary"
+        android:text="nikhil " />
+
+    <Button
+        android:id="@+id/Previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/act"
+        android:layout_alignStart="@+id/act"
+        android:layout_below="@+id/act"
+        android:layout_marginTop="18dp"
+        android:text="Previous" />
+
+    <Button
+        android:id="@+id/Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Previous"
+        android:layout_alignBottom="@+id/Previous"
+        android:layout_alignLeft="@+id/Time"
+        android:layout_alignStart="@+id/Time"
+        android:text="Next" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Resources"
+        android:layout_alignRight="@+id/Resources"
+        android:layout_alignTop="@+id/Next"
+        android:text="Add Activity" />
+</RelativeLayout>
